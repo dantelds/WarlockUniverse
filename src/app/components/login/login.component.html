@@ -1,25 +1,42 @@
 <div class="row">
-  <form id="login-form" class="text-left">
-    <div class="row">
-      <h1>Login</h1>
-    </div>
-    <div class="login-form-main-message"></div>
-    <div class="main-login-form">
-      <div class="login-group">
-        <div class="form-group">
-          <label for="lg_username" class="sr-only">Username</label>
-          <input type="text" class="form-control" id="lg_username" name="lg_username" placeholder="username">
-        </div>
-        <div class="form-group">
-          <label for="lg_password" class="sr-only">Password</label>
-          <input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="password">
-        </div>
+  <div class="col-xm-2 col-sm-3 col-lg-5 "></div>
+  <div class="col-xm-8 col-sm-6 col-lg-2 ">
+    <form id="login-form" class="text-left">
+      <div class="row text-center">
+        <h1>Enter to Warlock Universe</h1>
+        <h3>Become the strongest warrior</h3>
       </div>
-      <button type="submit" class="btn btn-primary btn-md">Login</button>
-    </div>
-    <div class="etc-login-form">
-      <p>forgot your password? <a href="#">click here</a></p>
-      <p>new user? <a href="signup">create new account</a></p>
-    </div>
-  </form>
+      <div class="login-form-main-message"></div>
+      <div class="main-login-form">
+        <div class="login-group">
+          <div class="form-group">
+            <label for="lg_username" class="sr-only">Username</label>
+            <input type="text" [(ngModel)]="user.username" #username="ngModel" class="form-control" id="lg_username"
+                   name="lg_username" placeholder="username" required/>
+            <div [hidden]="username.valid || username.pristine"
+                 class="alert alert-danger">
+              Username is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lg_password" class="sr-only">Password</label>
+            <input type="password" [(ngModel)]="user.password" #password="ngModel" class="form-control" id="lg_password"
+                   name="lg_password" placeholder="password" required/>
+            <div [hidden]="password.valid || password.pristine"
+                 class="alert alert-danger">
+              Username is required
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-md" (click)="login()">Login</button>
+      </div>
+      <hr/>
+      <div class="etc-login-form">
+        <p>forgot your password? <a href="#">click here</a></p>
+        <p>new user? <a href="signup">create new account</a></p>
+      </div>
+    </form>
+  </div>
+  <div class="col-xm-2 col-sm-3 col-lg-5 "></div>
+
 </div>

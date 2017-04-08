@@ -3,7 +3,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
 
 export class User {
-  constructor(public user: string, public password: string) {}
+  constructor(public username: string, public password: string) {}
 }
 
 @Injectable()

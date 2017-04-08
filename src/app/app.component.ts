@@ -5,6 +5,7 @@ import {ILink} from "./interfaces/link";
     templateUrl:'app/app.component.html'
 })
 export class AppComponent {
+  logged:boolean = false;
   onModuleClicked(module:ILink){
     console.log('soy el modulo pulsado',module);
   }

@@ -9,8 +9,13 @@ import {LoginService, User} from './login.service';
 })
 export class LoginComponent{
 
-  user: User = null;
+  user: User = new User('','');
 
   constructor(private LoginService: LoginService) {
   }
+
+  login(){
+    console.log('hago login');
+  }
+
 }
