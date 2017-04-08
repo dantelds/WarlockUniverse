@@ -1,15 +1,15 @@
 import { NgModule }            from '@angular/core';
 import { RouterModule }        from '@angular/router';
 
-import { CharacterComponent }    from './character.component';
+import { ComingSoonComponent }    from './coming-soon.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
-    { path: 'character', component: CharacterComponent }
+    { path: '', component: ComingSoonComponent }
   ])],
   exports: [RouterModule]
 })
-export class CharacterRoutingModule {}
+export class ComingSoonRoutingModule {}
 
 
 /*

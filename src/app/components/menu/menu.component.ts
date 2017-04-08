@@ -10,7 +10,7 @@ export class MenuComponent {
   @Output() onModuleClicked: EventEmitter<ILink>=new EventEmitter<ILink>();
   items: ILink[]=[
     {
-      href:'character',
+      href:'warlock',
       text:'Personaje'
     },
     {

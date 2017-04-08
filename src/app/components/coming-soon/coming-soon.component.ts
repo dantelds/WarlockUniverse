@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'coming-soon',
-  templateUrl: 'app/coming-soon/coming-soon.component.html',
-  styleUrls:['app/coming-soon/coming-soon.component.css']
+  templateUrl: 'app/components/coming-soon/coming-soon.component.html',
+  styleUrls:['app/components/coming-soon/coming-soon.component.css']
 })
 export class ComingSoonComponent {
 

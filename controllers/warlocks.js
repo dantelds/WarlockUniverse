@@ -6,7 +6,7 @@ exports.findAllWarlocks = function (req, res) {
         if (err)
             res.send(500, err.message);
 
-        console.log('GET /tvshows');
+        console.log('GET /warlocks');
         res.status(200).jsonp(warlocks);
     });
 };
@@ -15,7 +15,7 @@ exports.findWarlock = function (req, res) {
     Warlock.findById(req.params.id, function (err, warlock) {
         if (err)
             return res.send(500, err.message);
-        console.log('GET /tvshow/' + req.params.id);
+        console.log('GET /warlock/' + req.params.id);
         res.status(200).jsonp(warlock);
     });
 };
