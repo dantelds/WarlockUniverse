@@ -11,6 +11,6 @@ exports = module.exports = function(app, mongoose) {
 		strength: 	{ type: Number }
 	});
 
-	mongoose.model('warlock', warlockSchema);
+	mongoose.model('warlocks', warlockSchema);
 
 };

@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Models and controllers
-var models     = require('./models/warlock')(app, mongoose);
+var models     = require('./models/warlocks')(app, mongoose);
 var WarlockCtrl = require('./controllers/warlocks');
 
 // Example Route
@@ -32,9 +32,9 @@ var api = express.Router();
 api.route('/warlock')
    .get(WarlockCtrl.findAllWarlocks)
    .post(WarlockCtrl.addWarlock);
-
+api.route('/login')
+  .post(WarlockCtrl.findWarlock)
 api.route('/warlock/:id')
-  .get(WarlockCtrl.findWarlock)
   .put(WarlockCtrl.updateWarlock)
   .delete(WarlockCtrl.deleteWarlock);
 

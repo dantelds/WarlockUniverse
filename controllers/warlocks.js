@@ -1,22 +1,23 @@
 var mongoose = require('mongoose');
-var Warlock = mongoose.model('warlock');
+var Warlock = mongoose.model('warlocks');
 
 exports.findAllWarlocks = function (req, res) {
     Warlock.find(function (err, warlocks) {
         if (err)
             res.send(500, err.message);
 
-        console.log('GET /warlocks');
         res.status(200).jsonp(warlocks);
     });
 };
 
 exports.findWarlock = function (req, res) {
-    Warlock.findById(req.params.id, function (err, warlock) {
+    Warlock.findOne({"username": req.body.username, "password": req.body.password}, function (err, warlock) {
         if (err)
-            return res.send(500, err.message);
-        console.log('GET /warlock/' + req.params.id);
-        res.status(200).jsonp(warlock);
+            return res.status(500).send(err.message);
+        else if (!warlock)
+            return res.status(400).send('User or password incorrect, try again.');
+        else
+            res.status(200).jsonp(warlock);
     });
 };
 
