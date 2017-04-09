@@ -1,8 +1,8 @@
-import { Component, OnInit  } from '@angular/core';
-import {ILink} from "./interfaces/link";
-import {LoginService} from './services/login.service';
-import {TranslateService} from './services/language.service';
-import {Router} from '@angular/router';
+import { Component  } from '@angular/core';
+import { ILink } from "./interfaces/link";
+import { LoginService } from './services/login.service';
+import { TranslateService } from './services/language.service';
+import { Router } from '@angular/router';
 @Component({
     selector: 'my-app',
     templateUrl:'app/app.component.html'

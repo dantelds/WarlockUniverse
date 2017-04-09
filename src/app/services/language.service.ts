@@ -1,5 +1,5 @@
 
-import {Injectable, Inject} from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { TRANSLATIONS } from '../language/lang';
 
 @Injectable()

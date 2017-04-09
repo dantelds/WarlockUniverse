@@ -1,4 +1,3 @@
-/* Defines the product entity */
 export interface IUser {
   username: string;
   password: string;

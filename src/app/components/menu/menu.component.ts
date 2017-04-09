@@ -1,5 +1,5 @@
-import {Component, Output, EventEmitter} from '@angular/core';
-import {ILink} from "../../interfaces/link";
+import { Component, Output, EventEmitter } from '@angular/core';
+import { ILink } from "../../interfaces/link";
 
 @Component({
   selector: 'menu-app',

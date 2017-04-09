@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {WarlockService, Warlock} from '../../services/warlock.service';
+import { Component, OnInit } from '@angular/core';
+import { WarlockService, Warlock } from '../../services/warlock.service';
 
 
 @Component({

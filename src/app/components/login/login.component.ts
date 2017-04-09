@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {LoginService} from '../../services/login.service';
-import {Md5} from 'ts-md5/dist/md5';
-import {IUser} from "../../interfaces/user";
+import { Component } from '@angular/core';
+import { LoginService } from '../../services/login.service';
+import { Md5 } from 'ts-md5/dist/md5';
+import { IUser } from "../../interfaces/user";
 
 @Component({
   selector: 'login',

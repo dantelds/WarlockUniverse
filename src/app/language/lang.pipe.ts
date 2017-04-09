@@ -1,5 +1,3 @@
-// app/translate/translate.pipe.ts
-
 import { Pipe, PipeTransform } from '@angular/core';
 import { TranslateService } from '../services/language.service'; // our translate service
 

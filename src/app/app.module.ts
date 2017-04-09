@@ -6,8 +6,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { ComingSoonModule } from './components/coming-soon/coming-soon.module';
 import { AppRoutingModule } from './app.routes';
 
-import {LoginService} from './services/login.service';
-import {WarlockService} from './services/warlock.service';
+import { LoginService } from './services/login.service';
+import { WarlockService } from './services/warlock.service';
 
 import { AppComponent }  from './app.component';
 import { WarlockComponent } from './components/warlock/warlock.component';
