@@ -18,7 +18,7 @@ export class MenuComponent {
       text:this._translate.instant('menu-warlock')
     },
     {
-      href:'coming-soon',
+      href:'school',
       text:this._translate.instant('menu-school')
     },
     {

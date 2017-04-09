@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { IUser } from "../../interfaces/user";
 
 
 @Component({
-  selector: 'warlock',
-  templateUrl: './warlock.component.html',
-  styleUrls: ['./warlock.component.css']
+  selector: 'school',
+  templateUrl: './school.component.html',
+  styleUrls: ['./school.component.css']
 })
-export class WarlockComponent implements OnInit {
+export class SchoolComponent{
 
   warlock: IUser = null;
 
@@ -16,6 +16,4 @@ export class WarlockComponent implements OnInit {
     this.warlock = LoginService.user;
   }
 
-  ngOnInit() {
-  }
 }
