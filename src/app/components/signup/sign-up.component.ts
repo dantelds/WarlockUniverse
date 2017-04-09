@@ -55,12 +55,12 @@ export class SignUpComponent{
   }
   onError(error:any){
     this.error = error._body;
-    this.user = this.LoginService.returnEmptyUser();
   }
 
   signUp(){
-    this.user.password = Md5.hashStr(this.user.password).toString();
-    this.LoginService.logIn(this.user).subscribe(IUser => this.onSignUp(IUser), Error => this.onError(Error));
+    var LoggedUser: IUser =   Object.assign({}, this.user);
+    LoggedUser.password = Md5.hashStr(this.user.password).toString();
+    this.LoginService.signUp(LoggedUser).subscribe(IUser => this.onSignUp(IUser), Error => this.onError(Error));
   }
 
 }

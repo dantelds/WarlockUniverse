@@ -60,11 +60,11 @@
           <!--gender-->
           <div class="form-group">
             <label for="su_gender" class="sr-only">{{ 'user-gender' | translate }}</label>
-            <select [(ngModel)]="user.gender" #school="ngModel" class="form-control" id="su_gender"
+            <select [(ngModel)]="user.gender" #gender="ngModel" class="form-control" id="su_gender"
                     name="su_gender"  required>
               <option value=""> {{ 'user-select-gender' | translate }}</option>
-              <option value="male"> {{ 'male' | translate }}</option>
-              <option value="female"> {{ 'female' | translate }}</option>
+              <option value="Male"> {{ 'male' | translate }}</option>
+              <option value="Female"> {{ 'female' | translate }}</option>
             </select>
             <div [hidden]="gender.valid || gender.pristine"
                  class="alert alert-danger">

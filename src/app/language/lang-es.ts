@@ -30,7 +30,7 @@ export const LANG_ES_TRANS = {
   "user-already-a-user":"already a user?",
   "user-create-new-account":"create new account",
   "user-new-user":"new user?",
-  "user-gender-school":"Select a gender for your warlock",
+  "user-select-gender":"Select a gender for your warlock",
   "user-select-school":"Select a school for your warlock",
 
   "earth":"earth",
