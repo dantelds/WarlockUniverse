@@ -42,7 +42,7 @@
       <hr/>
       <div class="etc-login-form">
         <!--<p>forgot your password? <a href="#">click here</a></p>-->
-        <p>{{'user-new-user' | translate}} <a href="sign-up">{{ 'user-create-new-account' | translate }}</a></p>
+        <p>{{'user-new-user' | translate}} <a [routerLink]="['/sign-up']" >{{ 'user-create-new-account' | translate }}</a></p>
       </div>
     </form>
   </div>

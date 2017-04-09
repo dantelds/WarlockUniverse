@@ -11,10 +11,10 @@ export class AppComponent {
   public supportedLanguages: any[];
   logged:boolean = false;
   constructor(private _translate: TranslateService, private LoginService: LoginService, private router: Router) {
-
+    this.router.navigate(['/login']);
     LoginService.loginManagerEmmiter$.subscribe(User => {
       this.logged = true;
-      this.router.navigate(['warlock']);
+      this.router.navigate(['/warlock']);
     });
   }
 
