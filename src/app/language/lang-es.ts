@@ -1,0 +1,46 @@
+export const LANG_ES_NAME = 'es';
+
+export const LANG_ES_TRANS = {
+  "login-header":"Enter to Warlock Universe",
+  "login-sub-header":"Become the strongest warrior",
+
+  "user-username-required":"Username is required",
+  "user-password-required":"Password is required",
+  "user-name-required":"Name is required",
+  "user-lastName-required":"Last name is required",
+  "user-birthDate-required":"Birth date is required",
+  "user-school-required":"School is required",
+  "user-gender-required":"Gender is required",
+
+  "user-username":"Username",
+  "user-password":"Password",
+  "user-name":"Name",
+  "user-lastName":"Last name",
+  "user-birthDate":"Birth",
+  "user-school":"School",
+  "user-gender":"Gender",
+  "user-health":"Health",
+  "user-magic":"Magic",
+  "user-strength":"Strength",
+
+
+  "user-login":"Login",
+  "user-SignUp":"Sign up",
+  "user-SignIn":"Sign in",
+  "user-already-a-user":"already a user?",
+  "user-create-new-account":"create new account",
+  "user-new-user":"new user?",
+  "user-select-school":"Select a school for your warlock",
+
+  "earth":"Login",
+  "wind":"Login",
+  "water":"Login",
+  "fire":"Login",
+
+
+
+  "school-earth-advantages":"they use the strong to defeat their enemies",
+  "school-wind-advantages":"they have a lot of health to resist their enemies attacks",
+  "school-fire-advantages":"they use the magic to defeat their enemies",
+  "school-water-advantages":"a balanced warrior recommended for the new players"
+};

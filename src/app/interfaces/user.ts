@@ -1,0 +1,15 @@
+/* Defines the product entity */
+export interface IUser {
+  username: string;
+  password: string;
+  name: 		string;
+  lastName: string;
+  birthDate:string;
+  school:   string;
+  sex:      string;
+  health: 	number;
+  magic: 		number;
+  strength: number;
+
+}
+

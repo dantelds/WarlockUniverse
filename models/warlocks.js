@@ -2,8 +2,8 @@ exports = module.exports = function(app, mongoose) {
 
 	var warlockSchema = new mongoose.Schema({
 		name: 		{ type: String },
-		birthdate: 	{ type: String },
-		lastname: 	{ type: String },
+    birthDate: 	{ type: String },
+		lastName: 	{ type: String },
 		school:  	{ type: String },
 		sex:            { type: String, enum: ['Male', 'Female'] },
 		health: 	{ type: Number },

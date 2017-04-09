@@ -1,29 +1,33 @@
-import {Component, } from '@angular/core';
-import {LoginService, User} from './login.service';
-import { FormsModule } from '@angular/forms';
+import {Component} from '@angular/core';
+import {LoginService} from '../../services/login.service';
+import {Md5} from 'ts-md5/dist/md5';
+import {IUser} from "../../interfaces/user";
 
 @Component({
   selector: 'login',
-  templateUrl: 'app/components/login/login.component.html',
-  styleUrls: ['app/components/login/login.component.css']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent{
 
-  user: User = new User('', '');
+  user: IUser = null;
   error: string = null;
 
   constructor(private LoginService: LoginService) {
+    this.user = this.LoginService.returnEmptyUser();
   }
-  onLogin(user:User){
+  onLogin(user:IUser){
     this.error = null;
     this.LoginService.user = user;
     this.LoginService.loginManagerEmmit(user);
   }
   onError(error:any){
     this.error = error._body;
+    this.user = this.LoginService.returnEmptyUser();
   }
   login(){
-    this.LoginService.logIn(this.user).subscribe(User => this.onLogin(User), Error => this.onError(Error));
+    this.user.password = Md5.hashStr(this.user.password).toString();
+    this.LoginService.logIn(this.user).subscribe(IUser => this.onLogin(IUser), Error => this.onError(Error));
   }
 
 }

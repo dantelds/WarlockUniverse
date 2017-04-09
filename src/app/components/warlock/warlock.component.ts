@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {WarlockService, Warlock} from './warlock.service';
+import {WarlockService, Warlock} from '../../services/warlock.service';
 
 
 @Component({
   selector: 'warlock',
-  templateUrl: 'app/components/warlock/warlock.component.html',
-  styleUrls: ['app/components/warlock/warlock.component.css']
+  templateUrl: './warlock.component.html',
+  styleUrls: ['./warlock.component.css']
 })
 export class WarlockComponent implements OnInit {
 
