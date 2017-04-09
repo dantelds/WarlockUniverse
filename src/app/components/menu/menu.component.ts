@@ -1,6 +1,7 @@
 import {Component, Output, EventEmitter} from '@angular/core';
 import {ILink} from "../../interfaces/link";
 import {TranslateService} from '../../services/language.service';
+declare var $:any;
 
 
 @Component({
@@ -11,11 +12,14 @@ import {TranslateService} from '../../services/language.service';
 export class MenuComponent {
   @Output() onModuleClicked: EventEmitter<ILink> = new EventEmitter<ILink>();
 
-
   items: ILink[] = null;
   currentItem: ILink;
 
   constructor(private _translate: TranslateService) {
+    this.setMenuLinks();
+  }
+
+  private setMenuLinks(): void{
     this.items = [
       {
         href: 'warlock',
@@ -39,12 +43,10 @@ export class MenuComponent {
       },
     ];
     this.currentItem = this.items[0];
-    console.log('items-------->', this.items);
-    console.log("this._translate.instant('menu-warlock')-------->", this._translate.instant('menu-warlock'));
-    console.log("this._translate.instant('user-login')-------->", this._translate.instant('user-login'));
-  }
+  };
 
   onSelectItem(selectedItem: ILink): void {
+    $('.navbar-collapse').collapse("hide");
     this.currentItem = selectedItem;
     this.onModuleClicked.emit(selectedItem);
   }
