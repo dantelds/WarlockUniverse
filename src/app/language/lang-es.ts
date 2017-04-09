@@ -45,6 +45,9 @@ export const LANG_ES_TRANS = {
   "water":"Agua",
   "fire":"Fuego",
 
+  "Male":"Hombre",
+  "Female":"Mujer",
+
 
 
   "school-earth-advantages":"usan la fuerza para destruir a sus enemigos.",
