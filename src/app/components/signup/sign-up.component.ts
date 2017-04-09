@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {LoginService} from '../../services/login.service';
 import {TranslateService} from '../../services/language.service';
+import {Md5} from 'ts-md5/dist/md5';
 
 import {IUser} from "../../interfaces/user";
 @Component({
@@ -42,7 +43,24 @@ export class SignUpComponent{
         this.schoolText = this._translate.instant('school-wind-advantages');
         this.setInitialAttributes(2, 3, 7);
         break;
+      default:
+        this.schoolText = null;
+        break;
     }
+  }
+  onSignUp(user:IUser){
+    this.error = null;
+    this.LoginService.user = user;
+    this.LoginService.loginManagerEmmit(user);
+  }
+  onError(error:any){
+    this.error = error._body;
+    this.user = this.LoginService.returnEmptyUser();
+  }
+
+  signUp(){
+    this.user.password = Md5.hashStr(this.user.password).toString();
+    this.LoginService.logIn(this.user).subscribe(IUser => this.onSignUp(IUser), Error => this.onError(Error));
   }
 
 }

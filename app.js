@@ -30,10 +30,11 @@ app.use(router);
 var api = express.Router();
 
 api.route('/warlock')
-   .get(WarlockCtrl.findAllWarlocks)
-   .post(WarlockCtrl.addWarlock);
+   .get(WarlockCtrl.findAllWarlocks);
+api.route('/signup')
+  .post(WarlockCtrl.createWarlock);
 api.route('/login')
-  .post(WarlockCtrl.findWarlock)
+  .post(WarlockCtrl.findWarlock);
 api.route('/warlock/:id')
   .put(WarlockCtrl.updateWarlock)
   .delete(WarlockCtrl.deleteWarlock);

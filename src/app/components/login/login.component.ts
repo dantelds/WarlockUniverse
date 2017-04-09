@@ -8,7 +8,7 @@ import {IUser} from "../../interfaces/user";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent{
+export class LoginComponent {
 
   user: IUser = null;
   error: string = null;
@@ -16,18 +16,21 @@ export class LoginComponent{
   constructor(private LoginService: LoginService) {
     this.user = this.LoginService.returnEmptyUser();
   }
-  onLogin(user:IUser){
+
+  onLogin(user: IUser) {
     this.error = null;
     this.LoginService.user = user;
     this.LoginService.loginManagerEmmit(user);
   }
-  onError(error:any){
+
+  onError(error: any) {
     this.error = error._body;
-    this.user = this.LoginService.returnEmptyUser();
   }
-  login(){
-    this.user.password = Md5.hashStr(this.user.password).toString();
-    this.LoginService.logIn(this.user).subscribe(IUser => this.onLogin(IUser), Error => this.onError(Error));
+
+  login() {
+    var LoggedUser: IUser =   Object.assign({}, this.user);
+    LoggedUser.password = Md5.hashStr(this.user.password).toString();
+    this.LoginService.logIn(LoggedUser).subscribe(IUser => this.onLogin(IUser), Error => this.onError(Error));
   }
 
 }

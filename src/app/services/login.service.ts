@@ -1,43 +1,49 @@
-import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Subject }    from 'rxjs/Subject';
+import {Injectable} from '@angular/core';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {Subject}    from 'rxjs/Subject';
 import {IUser} from "../interfaces/user";
-
 
 
 @Injectable()
 export class LoginService {
-  user:IUser=null;
-  private loginManager:Subject<IUser> = new Subject<IUser>();
-  constructor(private _http: Http){
+  user: IUser = null;
+  private loginManager: Subject<IUser> = new Subject<IUser>();
+
+  constructor(private _http: Http) {
   }
 
   loginManagerEmmiter$ = this.loginManager.asObservable();
 
-  loginManagerEmmit(user: IUser)
-  {
+  loginManagerEmmit(user: IUser) {
     this.loginManager.next(user);
   }
 
-  returnEmptyUser(){
+  returnEmptyUser() {
     var userToReturn: IUser = {
       username: '',
       password: '',
-      name: 		'',
+      name: '',
       lastName: '',
-      birthDate:'',
-      school:   '',
-      sex:      '',
-      health: 	0,
-      magic: 		0,
+      birthDate: '',
+      school: '',
+      gender: '',
+      health: 0,
+      magic: 0,
       strength: 0,
     };
     return userToReturn;
   }
 
-  logIn(user:Object) {
-    let headers      = new Headers({ 'Content-Type': 'application/json' });
-    let options       = new RequestOptions({ headers: headers });
-    return  this._http.post('http://localhost:3000/api/login', user, options).map((response: Response) => <IUser> response.json());
+  logIn(user: IUser) {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    return this._http.post('http://localhost:3000/api/login', user, options).map((response: Response) => <IUser> response.json());
+  }
+
+
+  signUp(user: IUser) {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+    return this._http.post('http://localhost:3000/api/signup', user, options).map((response: Response) => <IUser> response.json());
   }
 }
