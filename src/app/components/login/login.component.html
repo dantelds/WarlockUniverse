@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-xs-2 col-sm-3  "></div>
+  <div class="col-xs-8 col-sm-6 ">
+    <form id="login-form" class="text-left">
+      <div class="row text-center">
+        <img src="/images/logo.png"/>
+        <h1>{{ 'login-header' | translate }}</h1>
+        <h3>{{ 'login-sub-header' | translate }}</h3>
+        <div [hidden]="!error"
+             class="alert alert-danger">
+          {{error}}
+        </div>
+      </div>
+      <div class="login-form-main-message"></div>
+      <div class="main-login-form">
+        <div class="login-group">
+
+          <!--username-->
+          <div class="form-group">
+            <label for="lg_username" class="sr-only">{{ 'user-username' | translate }} </label>
+            <input type="text" [(ngModel)]="user.username" #username="ngModel" class="form-control" id="lg_username"
+                   name="lg_username" placeholder="{{ 'user-username' | translate }}" required/>
+            <div [hidden]="username.valid || username.pristine"
+                 class="alert alert-danger">
+              {{ 'user-username-required' | translate }}
+            </div>
+          </div>
+
+          <!--password-->
+          <div class="form-group">
+            <label for="lg_password" class="sr-only">{{ 'user-password' | translate }}</label>
+            <input type="password" [(ngModel)]="user.password" #password="ngModel" class="form-control" id="lg_password"
+                   name="lg_password" placeholder="{{ 'user-password' | translate }}" required/>
+            <div [hidden]="password.valid || password.pristine"
+                 class="alert alert-danger">
+              {{ 'user-password-required' | translate }}
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-md" (click)="login()">{{ 'user-login' | translate }}</button>
+      </div>
+      <hr/>
+      <div class="etc-login-form">
+        <!--<p>forgot your password? <a href="#">click here</a></p>-->
+        <p>{{'user-new-user' | translate}} <a [routerLink]="['/sign-up']" >{{ 'user-create-new-account' | translate }}</a></p>
+      </div>
+    </form>
+  </div>
+  <div class="col-xs-2 col-sm-3 "></div>
+
+</div>

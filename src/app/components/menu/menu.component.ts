@@ -1,16 +1,16 @@
-import {Component, Output, EventEmitter} from '@angular/core';
-import {ILink} from "../../interfaces/link";
+import { Component, Output, EventEmitter } from '@angular/core';
+import { ILink } from "../../interfaces/link";
 
 @Component({
   selector: 'menu-app',
-  templateUrl: 'app/components/menu/menu.component.html',
-  styleUrls: ['app/components/menu/menu.component.css']
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
   @Output() onModuleClicked: EventEmitter<ILink>=new EventEmitter<ILink>();
   items: ILink[]=[
     {
-      href:'character',
+      href:'warlock',
       text:'Personaje'
     },
     {

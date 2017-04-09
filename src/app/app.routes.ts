@@ -1,10 +1,15 @@
 import { NgModule }             from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/signup/sign-up.component';
+import { WarlockComponent } from './components/warlock/warlock.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'character', pathMatch: 'full'},
-  { path: 'character', loadChildren: 'app/character/character.module#CharacterModule' },
-  { path: 'coming-soon', loadChildren: 'app/coming-soon/coming-soon.module#ComingSoonModule' }
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'warlock', component: WarlockComponent },
+  { path: 'coming-soon', loadChildren: 'app/components/coming-soon/coming-soon.module#ComingSoonModule' }
 ];
 
 @NgModule({
