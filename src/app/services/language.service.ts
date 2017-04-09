@@ -5,33 +5,49 @@ import { TRANSLATIONS } from '../language/lang';
 @Injectable()
 export class TranslateService {
   private _currentLang: string;
+  private supportedLanguages: any[] = [
+    { display: 'English', value: 'en' },
+    { display: 'Español', value: 'es'}
+  ];
+
+  constructor(@Inject(TRANSLATIONS) private _translations: any) {
+    if(!this._currentLang)
+    {
+      this.setDefaultLang();
+    }
+  }
+
+  private setDefaultLang(){
+    var language:string = navigator.language;
+    if(language !== 'es' && language !== 'en'){
+      language = 'en';
+    }
+    this.use(language);
+  }
 
   public get currentLang() {
     return this._currentLang;
   }
 
-  // inject our translations
-  constructor(@Inject(TRANSLATIONS) private _translations: any) {
-  }
-
   public use(lang: string): void {
-    // set current language
     this._currentLang = lang;
   }
 
-  private translate(key: string): string {
-    // private perform translation
-    let translation = key;
+  public isCurrentLang(lang: string) {
+    return lang === this.currentLang;
+  }
 
+
+
+  private translate(key: string): string {
+    let translation = key;
     if (this._translations[this.currentLang] && this._translations[this.currentLang][key]) {
       return this._translations[this.currentLang][key];
     }
-
     return translation;
   }
 
   public instant(key: string) {
-    // call translation
     return this.translate(key);
   }
 }

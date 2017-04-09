@@ -1,47 +1,54 @@
 export const LANG_ES_NAME = 'es';
 
 export const LANG_ES_TRANS = {
-  "login-header":"Enter to Warlock Universe",
-  "login-sub-header":"Become the strongest warrior",
+  "login-header":"Entra en Warlock Universe",
+  "login-sub-header":"combiertete en el guerrero mas fuerte",
 
-  "user-username-required":"Username is required",
-  "user-password-required":"Password is required",
-  "user-name-required":"Name is required",
-  "user-lastName-required":"Last name is required",
-  "user-birthDate-required":"Birth date is required",
-  "user-school-required":"School is required",
-  "user-gender-required":"Gender is required",
+  "user-username-required":"Se requiere un nombre de usuario",
+  "user-password-required":"Se requiere una contraseña",
+  "user-name-required":"Se requiere un nombre",
+  "user-lastName-required":"Se requiere un apellido",
+  "user-birthDate-required":"Se requiere una fecha de nacimiento",
+  "user-school-required":"Es obligatorio seleccionar una escuela",
+  "user-gender-required":"Es obligatorio seleccionar un genero",
 
-  "user-username":"Username",
-  "user-password":"Password",
-  "user-name":"Name",
-  "user-lastName":"Last name",
-  "user-birthDate":"Birth",
-  "user-school":"School",
-  "user-gender":"Gender",
-  "user-health":"Health",
-  "user-magic":"Magic",
-  "user-strength":"Strength",
-
-
-  "user-login":"Login",
-  "user-SignUp":"Sign up",
-  "user-SignIn":"Sign in",
-  "user-already-a-user":"already a user?",
-  "user-create-new-account":"create new account",
-  "user-new-user":"new user?",
-  "user-select-gender":"Select a gender for your warlock",
-  "user-select-school":"Select a school for your warlock",
-
-  "earth":"earth",
-  "wind":"wind",
-  "water":"water",
-  "fire":"fire",
+  "user-username":"Usuario",
+  "user-password":"Contraseña",
+  "user-name":"Nombre",
+  "user-lastName":"Apellido",
+  "user-birthDate":"Fecha de nacimiento",
+  "user-school":"Escuela",
+  "user-gender":"Género",
+  "user-health":"Salud",
+  "user-magic":"Magia",
+  "user-strength":"Fuerza",
 
 
+  "user-login":"Acceder",
+  "user-SignUp":"Registrarse",
+  "user-SignIn":"Acceder",
+  "user-already-a-user":"¿ya estas registrado?",
+  "user-create-new-account":"crear una nueva cuenta",
+  "user-new-user":"¿no estas registrado?",
+  "user-select-gender":"Selecciona un genero para tu mago",
+  "user-select-school":"Selecciona una escuela para tu mago",
 
-  "school-earth-advantages":"they use the strong to defeat their enemies",
-  "school-wind-advantages":"they have a lot of health to resist their enemies attacks",
-  "school-fire-advantages":"they use the magic to defeat their enemies",
-  "school-water-advantages":"a balanced warrior recommended for the new players"
+  "menu-warlock":"Mago",
+  "menu-school":"Escuela",
+  "menu-dungeons":"Mazmorra",
+  "menu-arena":"Arena",
+  "menu-store":"Tienda",
+
+
+  "earth":"Tierra",
+  "wind":"Aire",
+  "water":"Agua",
+  "fire":"Fuego",
+
+
+
+  "school-earth-advantages":"usan la fuerza para destruir a sus enemigos.",
+  "school-wind-advantages":"tienen mucha salud para resistir los ataques de sus enemigos.",
+  "school-fire-advantages":"usan la magia para destruir a sus enemigos.",
+  "school-water-advantages":"un guerrero equilibrado, recomendado para los nuevos jugadores."
 };

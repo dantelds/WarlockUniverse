@@ -17,7 +17,7 @@ export const LANG_EN_TRANS = {
   "user-password":"Password",
   "user-name":"Name",
   "user-lastName":"Last name",
-  "user-birthDate":"Birth",
+  "user-birthDate":"Birth date",
   "user-school":"School",
   "user-gender":"Gender",
   "user-health":"Health",
@@ -34,6 +34,12 @@ export const LANG_EN_TRANS = {
   "user-select-gender":"Select a gender for your warlock",
   "user-select-school":"Select a school for your warlock",
 
+  "menu-warlock":"Warlock",
+  "menu-school":"School",
+  "menu-dungeons":"Dungeons",
+  "menu-arena":"Arena",
+  "menu-store":"Store",
+
 
   "earth":"earth",
   "wind":"wind",
@@ -42,8 +48,8 @@ export const LANG_EN_TRANS = {
 
 
 
-  "school-earth-advantages":"they use the strong to defeat their enemies",
-  "school-wind-advantages":"they have a lot of health to resist their enemies attacks",
-  "school-fire-advantages":"they use the magic to defeat their enemies",
-  "school-water-advantages":"a balanced warrior recommended for the new players"
+  "school-earth-advantages":"they use the strong to defeat their enemies.",
+  "school-wind-advantages":"they have a lot of health to resist their enemies attacks.",
+  "school-fire-advantages":"they use the magic to defeat their enemies.",
+  "school-water-advantages":"a balanced warrior recommended for the new players."
 };
