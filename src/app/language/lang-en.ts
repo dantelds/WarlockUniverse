@@ -33,10 +33,10 @@ export const LANG_EN_TRANS = {
   "user-new-user":"new user?",
   "user-select-school":"Select a school for your warlock",
 
-  "earth":"Login",
-  "wind":"Login",
-  "water":"Login",
-  "fire":"Login",
+  "earth":"earth",
+  "wind":"wind",
+  "water":"water",
+  "fire":"fire",
 
 
 

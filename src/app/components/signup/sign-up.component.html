@@ -73,7 +73,7 @@
             <label for="su_school" class="sr-only">{{ 'user-school' | translate }}</label>
             <select type="date" [(ngModel)]="user.school" #school="ngModel" class="form-control" id="su_school"
                    name="su_school"  (ngModelChange)="onChangeSchool($event)" required>
-              <option selected="selected"> {{ 'user-select-school' | translate }}</option>
+              <option value=""> {{ 'user-select-school' | translate }}</option>
               <option value="earth"> {{ 'earth' | translate }}</option>
               <option value="water"> {{ 'water' | translate }}</option>
               <option value="fire"> {{ 'fire' | translate }}</option>
