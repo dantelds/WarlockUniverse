@@ -18,13 +18,6 @@ export class AppComponent {
     });
   }
 
-  isCurrentLang(lang: string) {
-    return lang === this._translate.currentLang;
-  }
-
-  selectLang(lang: string) {
-    this._translate.use(lang);
-  }
 
   onModuleClicked(module:ILink){
     console.log('soy el modulo pulsado',module);
