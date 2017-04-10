@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Subject }    from 'rxjs/Subject';
-import { IUser } from "../interfaces/user";
+import {Injectable} from '@angular/core';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {Subject}    from 'rxjs/Subject';
+import {IUser} from "../interfaces/user";
 import 'rxjs/Rx';
 
 

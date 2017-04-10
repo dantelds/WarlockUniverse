@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login.service';
-import { IUser } from "../../interfaces/user";
+import {Component, OnInit} from '@angular/core';
+import {LoginService} from '../../services/login.service';
+import {IUser} from "../../interfaces/user";
 
 
 @Component({

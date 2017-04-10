@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { LoginService } from '../../services/login.service';
-import { Md5 } from 'ts-md5/dist/md5';
-import { IUser } from "../../interfaces/user";
+import {Component} from '@angular/core';
+import {LoginService} from '../../services/login.service';
+import {Md5} from 'ts-md5/dist/md5';
+import {IUser} from "../../interfaces/user";
 
 @Component({
   selector: 'login',
@@ -28,7 +28,7 @@ export class LoginComponent {
   }
 
   login() {
-    var LoggedUser: IUser =   Object.assign({}, this.user);
+    var LoggedUser: IUser = Object.assign({}, this.user);
     LoggedUser.password = Md5.hashStr(this.user.password).toString();
     this.LoginService.logIn(LoggedUser).subscribe(IUser => this.onLogin(IUser), Error => this.onError(Error));
   }

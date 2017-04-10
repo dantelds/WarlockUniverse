@@ -4,11 +4,11 @@ import {IUser} from "../../interfaces/user";
 
 
 @Component({
-  selector: 'school',
-  templateUrl: './school.component.html',
-  styleUrls: ['./school.component.css']
+  selector: 'arena',
+  templateUrl: './arena.component.html',
+  styleUrls: ['./arena.component.css']
 })
-export class SchoolComponent {
+export class ArenaComponent {
 
   warlock: IUser = null;
 
