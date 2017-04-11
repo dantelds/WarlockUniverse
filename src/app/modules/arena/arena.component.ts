@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {LoginService} from '../../services/login.service';
+import {GeneralService} from '../../services/general.service';
 import {IUser} from "../../interfaces/user";
 
 
@@ -12,8 +12,8 @@ export class ArenaComponent {
 
   warlock: IUser = null;
 
-  constructor(private LoginService: LoginService) {
-    this.warlock = LoginService.user;
+  constructor(private GeneralService: GeneralService) {
+    this.warlock = GeneralService.user;
   }
 
 }

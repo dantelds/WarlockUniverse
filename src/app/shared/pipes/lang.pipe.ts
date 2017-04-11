@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {TranslateService} from '../services/language.service'; // our translate service
+import {TranslateService} from '../../services/language.service'; // our translate service
 
 @Pipe({
   name: 'translate',

@@ -3,31 +3,34 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 
-import {ComingSoonModule} from './components/coming-soon/coming-soon.module';
+import {SharedModule} from './shared/shared.module';
+
+import {ArenaModule} from './modules/arena/arena.module';
+import {ComingSoonModule} from './modules/coming-soon/coming-soon.module';
+import {DungeonModule} from './modules/dungeon/dungeon.module';
+import {LoginModule} from './modules/login/login.module';
+import {SchoolModule} from './modules/school/school.module';
+import {SignUpModule} from './modules/sign-up/sign-up.module';
+import {StoreModule} from './modules/store/store.module';
+import {WarlockModule} from './modules/warlock/warlock.module';
+
+
 import {AppRoutingModule} from './app.routes';
 
 
 import {TRANSLATION_PROVIDERS}   from './language/lang';
-import {TranslatePipe}   from './language/lang.pipe';
 import {TranslateService}   from './services/language.service';
-import {LoginService} from './services/login.service';
+import {GeneralService} from './services/general.service';
 
 import {AppComponent}  from './app.component';
-import {ArenaComponent} from './components/arena/arena.component';
-import {DungeonComponent} from './components/dungeon/dungeon.component';
-import {LoginComponent} from './components/login/login.component';
 import {MenuComponent} from './components/menu/menu.component';
-import {SchoolComponent} from './components/school/school.component';
-import {SignUpComponent} from './components/signup/sign-up.component';
-import {StoreComponent} from './components/store/store.component';
-import {WarlockComponent} from './components/warlock/warlock.component';
 
 
 @NgModule({
-  imports: [FormsModule, BrowserModule, HttpModule, JsonpModule, AppRoutingModule, ComingSoonModule],
-  declarations: [AppComponent, ArenaComponent, DungeonComponent, LoginComponent, MenuComponent, SchoolComponent, SignUpComponent, StoreComponent, TranslatePipe, WarlockComponent],
+  imports: [ArenaModule,  ComingSoonModule, DungeonModule, LoginModule, SchoolModule, SharedModule, SignUpModule, StoreModule, WarlockModule, FormsModule, BrowserModule, HttpModule, JsonpModule, AppRoutingModule],
+  declarations: [AppComponent, MenuComponent],
   bootstrap: [AppComponent],
-  providers: [LoginService, TRANSLATION_PROVIDERS, TranslateService]
+  providers: [GeneralService, TRANSLATION_PROVIDERS, TranslateService]
 })
 export class AppModule {
 }

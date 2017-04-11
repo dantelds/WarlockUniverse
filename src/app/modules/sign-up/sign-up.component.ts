@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {LoginService} from '../../services/login.service';
+import {GeneralService} from '../../services/general.service';
 import {TranslateService} from '../../services/language.service';
 import {Md5} from 'ts-md5/dist/md5';
 
@@ -15,8 +15,8 @@ export class SignUpComponent {
   error: string = null;
   schoolText: string = null;
 
-  constructor(private LoginService: LoginService, private _translate: TranslateService) {
-    this.user = this.LoginService.returnEmptyUser();
+  constructor(private GeneralService: GeneralService, private _translate: TranslateService) {
+    this.user = this.GeneralService.returnEmptyUser();
   }
 
   setInitialAttributes(strength: number, magic: number, health: number) {
@@ -51,8 +51,8 @@ export class SignUpComponent {
 
   onSignUp(user: IUser) {
     this.error = null;
-    this.LoginService.user = user;
-    this.LoginService.loginManagerEmmit(user);
+    this.GeneralService.user = user;
+    this.GeneralService.loginManagerEmmit(user);
   }
 
   onError(error: any) {
@@ -60,9 +60,10 @@ export class SignUpComponent {
   }
 
   signUp() {
-    var LoggedUser: IUser = Object.assign({}, this.user);
-    LoggedUser.password = Md5.hashStr(this.user.password).toString();
-    this.LoginService.signUp(LoggedUser).subscribe(IUser => this.onSignUp(IUser), Error => this.onError(Error));
+    var body: IUser = Object.assign({}, this.user);
+    body.password = Md5.hashStr(this.user.password).toString();
+    this.GeneralService.apiCall('post', 'sign-up', body)
+      .subscribe((Response:any) => this.onSignUp(Response), (Error:any) => this.onError(Error));
   }
 
 }

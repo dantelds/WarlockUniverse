@@ -41,6 +41,10 @@ export class MenuComponent {
         href: 'store',
         text: this._translate.instant('menu-store')
       },
+      {
+        href: 'coming-soon',
+        text: 'coming-soon'
+      }
     ];
     this.currentItem = this.items[0];
   };

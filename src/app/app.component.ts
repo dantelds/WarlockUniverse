@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ILink} from "./interfaces/link";
-import {LoginService} from './services/login.service';
+import {GeneralService} from './services/general.service';
 import {TranslateService} from './services/language.service';
 import {Router} from '@angular/router';
 @Component({
@@ -10,9 +10,9 @@ import {Router} from '@angular/router';
 export class AppComponent {
   logged: boolean = false;
 
-  constructor(private _translate: TranslateService, private LoginService: LoginService, private router: Router) {
+  constructor(private _translate: TranslateService, private GeneralService: GeneralService, private router: Router) {
     this.router.navigate(['/login']);
-    LoginService.loginManagerEmmiter$.subscribe(User => {
+    GeneralService.loginManagerEmmiter$.subscribe(User => {
       this.logged = true;
       this.router.navigate(['/warlock']);
     });
