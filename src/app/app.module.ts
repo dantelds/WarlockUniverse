@@ -23,12 +23,12 @@ import {TranslateService}   from './services/language.service';
 import {GeneralService} from './services/general.service';
 
 import {AppComponent}  from './app.component';
-import {MenuComponent} from './components/menu/menu.component';
+import {MenuModule} from './components/menu/menu.module';
 
 
 @NgModule({
-  imports: [ArenaModule,  ComingSoonModule, DungeonModule, LoginModule, SchoolModule, SharedModule, SignUpModule, StoreModule, WarlockModule, FormsModule, BrowserModule, HttpModule, JsonpModule, AppRoutingModule],
-  declarations: [AppComponent, MenuComponent],
+  imports: [ArenaModule,  ComingSoonModule, DungeonModule, LoginModule, MenuModule, SchoolModule, SharedModule, SignUpModule, StoreModule, WarlockModule, FormsModule, BrowserModule, HttpModule, JsonpModule, AppRoutingModule],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   providers: [GeneralService, TRANSLATION_PROVIDERS, TranslateService]
 })

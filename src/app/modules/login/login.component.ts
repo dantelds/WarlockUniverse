@@ -8,10 +8,11 @@ import {IUser} from "../../interfaces/user";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent  {
 
   user: IUser = null;
   error: string = null;
+
 
   constructor(private GeneralService: GeneralService) {
     this.user = this.GeneralService.returnEmptyUser();
