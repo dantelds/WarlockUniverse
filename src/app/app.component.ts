@@ -9,17 +9,51 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   logged: boolean = false;
+  links: ILink[] = null;
 
   constructor(private _translate: TranslateService, private GeneralService: GeneralService, private router: Router) {
     this.router.navigate(['/login']);
-    GeneralService.loginManagerEmmiter$.subscribe(User => {
-      this.logged = true;
-      this.router.navigate(['/warlock']);
+    this.setMenuLinks();
+    this.createLoginListener();
+  }
+
+  private createLoginListener() {
+    this.GeneralService.loginManagerEmmiter$.subscribe(User => {
+      this.onUserLogin();
     });
+  }
+  private onUserLogin(){
+    this.logged = true;
+    this.router.navigate(['/warlock']);
+  }
+
+  private setMenuLinks(){
+    this.links = [{
+        href: 'warlock',
+        text: this._translate.instant('menu-warlock')
+      },{
+        href: 'school',
+        text: this._translate.instant('menu-school')
+      },{
+        href: 'dungeon',
+        text: this._translate.instant('menu-dungeons')
+      },{
+        href: 'arena',
+        text: this._translate.instant('menu-arena')
+      },{
+        href: 'store',
+        text: this._translate.instant('menu-store')
+      },{
+        href: 'coming-soon',
+        text: 'coming-soon'
+      }
+    ];
   }
 
 
   onModuleClicked(module: ILink) {
     console.log('soy el modulo pulsado', module);
   }
+
+
 }
