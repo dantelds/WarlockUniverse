@@ -1,25 +1,23 @@
-
-import { Injectable, Inject } from '@angular/core';
-import { TRANSLATIONS } from '../language/lang';
+import {Injectable, Inject} from '@angular/core';
+import {TRANSLATIONS} from '../language/lang';
 
 @Injectable()
 export class TranslateService {
   private _currentLang: string;
   private supportedLanguages: any[] = [
-    { display: 'English', value: 'en' },
-    { display: 'Español', value: 'es'}
+    {display: 'English', value: 'en'},
+    {display: 'Español', value: 'es'}
   ];
 
   constructor(@Inject(TRANSLATIONS) private _translations: any) {
-    if(!this._currentLang)
-    {
+    if (!this._currentLang) {
       this.setDefaultLang();
     }
   }
 
-  private setDefaultLang(){
-    var language:string = navigator.language;
-    if(language !== 'es' && language !== 'en'){
+  private setDefaultLang() {
+    var language: string = navigator.language;
+    if (language !== 'es' && language !== 'en') {
       language = 'en';
     }
     this.use(language);
@@ -36,7 +34,6 @@ export class TranslateService {
   public isCurrentLang(lang: string) {
     return lang === this.currentLang;
   }
-
 
 
   private translate(key: string): string {

@@ -1,7 +1,7 @@
 import {Component, Output, EventEmitter} from '@angular/core';
 import {ILink} from "../../interfaces/link";
 import {TranslateService} from '../../services/language.service';
-declare var $:any;
+declare var $: any;
 
 
 @Component({
@@ -19,7 +19,7 @@ export class MenuComponent {
     this.setMenuLinks();
   }
 
-  private setMenuLinks(): void{
+  private setMenuLinks(): void {
     this.items = [
       {
         href: 'warlock',
@@ -30,17 +30,21 @@ export class MenuComponent {
         text: this._translate.instant('menu-school')
       },
       {
-        href: 'coming-soon',
+        href: 'dungeon',
         text: this._translate.instant('menu-dungeons')
       },
       {
-        href: 'coming-soon',
+        href: 'arena',
         text: this._translate.instant('menu-arena')
       },
       {
-        href: 'coming-soon',
+        href: 'store',
         text: this._translate.instant('menu-store')
       },
+      {
+        href: 'coming-soon',
+        text: 'coming-soon'
+      }
     ];
     this.currentItem = this.items[0];
   };

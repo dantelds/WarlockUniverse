@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { LoginService } from '../../services/login.service';
-import { TranslateService } from '../../services/language.service';
-import { Md5 } from 'ts-md5/dist/md5';
+import {Component} from '@angular/core';
+import {GeneralService} from '../../services/general.service';
+import {TranslateService} from '../../services/language.service';
+import {Md5} from 'ts-md5/dist/md5';
 
 import {IUser} from "../../interfaces/user";
 @Component({
@@ -9,24 +9,24 @@ import {IUser} from "../../interfaces/user";
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent{
+export class SignUpComponent {
 
   user: IUser = null;
   error: string = null;
-  schoolText:string = null;
+  schoolText: string = null;
 
-  constructor(private LoginService: LoginService, private _translate: TranslateService) {
-    this.user = this.LoginService.returnEmptyUser();
+  constructor(private GeneralService: GeneralService, private _translate: TranslateService) {
+    this.user = this.GeneralService.returnEmptyUser();
   }
-  setInitialAttributes(strength:number, magic:number, health:number){
+
+  setInitialAttributes(strength: number, magic: number, health: number) {
     this.user.strength = strength;
     this.user.magic = magic;
     this.user.health = health;
   }
 
-  onChangeSchool(){
-    switch (this.user.school)
-    {
+  onChangeSchool() {
+    switch (this.user.school) {
       case 'earth':
         this.schoolText = this._translate.instant('school-earth-advantages');
         this.setInitialAttributes(7, 2, 3);
@@ -48,19 +48,22 @@ export class SignUpComponent{
         break;
     }
   }
-  onSignUp(user:IUser){
+
+  onSignUp(user: IUser) {
     this.error = null;
-    this.LoginService.user = user;
-    this.LoginService.loginManagerEmmit(user);
+    this.GeneralService.user = user;
+    this.GeneralService.loginManagerEmmit(user);
   }
-  onError(error:any){
+
+  onError(error: any) {
     this.error = error._body;
   }
 
-  signUp(){
-    var LoggedUser: IUser =   Object.assign({}, this.user);
-    LoggedUser.password = Md5.hashStr(this.user.password).toString();
-    this.LoginService.signUp(LoggedUser).subscribe(IUser => this.onSignUp(IUser), Error => this.onError(Error));
+  signUp() {
+    var body: IUser = Object.assign({}, this.user);
+    body.password = Md5.hashStr(this.user.password).toString();
+    this.GeneralService.apiCall('post', 'sign-up', body)
+      .subscribe((Response:any) => this.onSignUp(Response), (Error:any) => this.onError(Error));
   }
 
 }

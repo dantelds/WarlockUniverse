@@ -1,21 +1,21 @@
-import { NgModule }             from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { SignUpComponent } from './components/signup/sign-up.component';
-import { SchoolComponent } from './components/school/school.component';
-import { WarlockComponent } from './components/warlock/warlock.component';
+import {NgModule}             from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'login', component: LoginComponent },
-  { path: 'sign-up', component: SignUpComponent },
-  { path: 'warlock', component: WarlockComponent },
-  { path: 'school', component: SchoolComponent },
-  { path: 'coming-soon', loadChildren: 'app/components/coming-soon/coming-soon.module#ComingSoonModule' }
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'arena', loadChildren: 'app/modules/arena/arena.module#ArenaModule'},
+  {path: 'dungeon', loadChildren: 'app/modules/dungeon/dungeon.module#DungeonModule'},
+  {path: 'login', loadChildren: 'app/modules/login/login.module#LoginModule'},
+  {path: 'school', loadChildren: 'app/modules/school/school.module#SchoolModule'},
+  {path: 'sign-up', loadChildren: 'app/modules/sign-up/sign-up.module#SignUpModule'},
+  {path: 'store', loadChildren: 'app/modules/store/store.module#StoreModule'},
+  {path: 'warlock', loadChildren: 'app/modules/warlock/warlock.module#WarlockModule'},
+  {path: 'coming-soon', loadChildren: 'app/modules/coming-soon/coming-soon.module#ComingSoonModule'}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
