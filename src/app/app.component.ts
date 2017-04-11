@@ -9,11 +9,28 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   logged: boolean = false;
-  links: ILink[] = null;
+  links: ILink[] = [{
+    href: 'warlock',
+    text: this._translate.instant('menu-warlock')
+  }, {
+    href: 'school',
+    text: this._translate.instant('menu-school')
+  }, {
+    href: 'dungeon',
+    text: this._translate.instant('menu-dungeons')
+  }, {
+    href: 'arena',
+    text: this._translate.instant('menu-arena')
+  }, {
+    href: 'store',
+    text: this._translate.instant('menu-store')
+  }, {
+    href: 'coming-soon',
+    text: 'coming-soon'
+  }];
 
   constructor(private _translate: TranslateService, private GeneralService: GeneralService, private router: Router) {
     this.router.navigate(['/login']);
-    this.setMenuLinks();
     this.createLoginListener();
   }
 
@@ -22,32 +39,10 @@ export class AppComponent {
       this.onUserLogin();
     });
   }
-  private onUserLogin(){
+
+  private onUserLogin() {
     this.logged = true;
     this.router.navigate(['/warlock']);
-  }
-
-  private setMenuLinks(){
-    this.links = [{
-        href: 'warlock',
-        text: this._translate.instant('menu-warlock')
-      },{
-        href: 'school',
-        text: this._translate.instant('menu-school')
-      },{
-        href: 'dungeon',
-        text: this._translate.instant('menu-dungeons')
-      },{
-        href: 'arena',
-        text: this._translate.instant('menu-arena')
-      },{
-        href: 'store',
-        text: this._translate.instant('menu-store')
-      },{
-        href: 'coming-soon',
-        text: 'coming-soon'
-      }
-    ];
   }
 
 

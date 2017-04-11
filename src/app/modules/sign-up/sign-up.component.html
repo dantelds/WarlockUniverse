@@ -13,97 +13,17 @@
       <div class="login-form-main-message"></div>
       <div class="main-login-form">
         <div class="login-group">
-          <!--username-->
-          <div class="form-group">
-            <label for="su_username" class="sr-only">{{ 'user-username' | translate }}</label>
-            <input type="text" [(ngModel)]="user.username" #username="ngModel" class="form-control" id="su_username"
-                   name="su_username" placeholder="{{ 'user-username' | translate }}" required/>
-            <div [hidden]="username.valid || username.pristine"
-                 class="alert alert-danger">
-              {{ 'user-username-required' | translate }}
-            </div>
+          <input-component [setup]="userInput"></input-component>
+          <input-component [setup]="passwordInput"></input-component>
+          <input-component [setup]="nameInput"></input-component>
+          <input-component [setup]="lastNameInput"></input-component>
+          <select-component [setup]="genderSelect"></select-component>
+          <input-component [setup]="birthDateInput"></input-component>
+          <select-component [setup]="schoolSelect" (onOptionSelected)='onSelectSchool($event)'></select-component>
+          <div [hidden]="!schoolText"
+               class="alert alert-success">
+            <p>{{schoolText}}</p>
           </div>
-
-          <!--password-->
-          <div class="form-group">
-            <label for="su_password" class="sr-only">{{ 'user-password' | translate }}</label>
-            <input type="password" [(ngModel)]="user.password" #password="ngModel" class="form-control" id="su_password"
-                   name="su_password" placeholder="{{ 'user-password' | translate }}" required/>
-            <div [hidden]="password.valid || password.pristine"
-                 class="alert alert-danger">
-              {{ 'user-password-required' | translate }}
-            </div>
-          </div>
-
-          <!--name-->
-          <div class="form-group">
-            <label for="su_name" class="sr-only">{{ 'user-name' | translate }}</label>
-            <input type="text" [(ngModel)]="user.name" #name="ngModel" class="form-control" id="su_name"
-                   name="su_name" placeholder="{{ 'user-name' | translate }}" required/>
-            <div [hidden]="name.valid || name.pristine"
-                 class="alert alert-danger">
-              {{ 'user-name-required' | translate }}
-            </div>
-          </div>
-
-          <!--lastName-->
-          <div class="form-group">
-            <label for="su_lastName" class="sr-only">{{ 'user-lastName' | translate }}</label>
-            <input type="text" [(ngModel)]="user.lastName" #lastName="ngModel" class="form-control" id="su_lastName"
-                   name="su_lastName" placeholder="{{ 'user-lastName' | translate }}" required/>
-            <div [hidden]="lastName.valid || lastName.pristine"
-                 class="alert alert-danger">
-              {{ 'user-lastName-required' | translate }}
-            </div>
-          </div>
-
-          <!--gender-->
-          <div class="form-group">
-            <label for="su_gender" class="sr-only">{{ 'user-gender' | translate }}</label>
-            <select [(ngModel)]="user.gender" #gender="ngModel" class="form-control" id="su_gender"
-                    name="su_gender"  required>
-              <option value=""> {{ 'user-select-gender' | translate }}</option>
-              <option value="Male"> {{ 'male' | translate }}</option>
-              <option value="Female"> {{ 'female' | translate }}</option>
-            </select>
-            <div [hidden]="gender.valid || gender.pristine"
-                 class="alert alert-danger">
-              {{ 'user-school-required' | translate }}
-            </div>
-          </div>
-
-          <!--birthDate-->
-          <div class="form-group">
-            <label for="su_birthDate" class="sr-only">{{ 'user-birthDate' | translate }}</label>
-            <input type="date" [(ngModel)]="user.birthDate" #birthDate="ngModel" class="form-control" id="su_birthDate"
-                   name="su_birthDate" placeholder="{{ 'user-birthDate' | translate }}" required/>
-            <div [hidden]="birthDate.valid || birthDate.pristine"
-                 class="alert alert-danger">
-              {{ 'user-birthDate-required' | translate }}
-            </div>
-          </div>
-
-          <!--school-->
-          <div class="form-group">
-            <label for="su_school" class="sr-only">{{ 'user-school' | translate }}</label>
-            <select [(ngModel)]="user.school" #school="ngModel" class="form-control" id="su_school"
-                   name="su_school"  (ngModelChange)="onChangeSchool($event)" required>
-              <option value=""> {{ 'user-select-school' | translate }}</option>
-              <option value="earth"> {{ 'earth' | translate }}</option>
-              <option value="water"> {{ 'water' | translate }}</option>
-              <option value="fire"> {{ 'fire' | translate }}</option>
-              <option value="wind"> {{ 'wind' | translate }}</option>
-            </select>
-            <div [hidden]="school.valid || school.pristine"
-                 class="alert alert-danger">
-              {{ 'user-school-required' | translate }}
-            </div>
-            <div [hidden]="!schoolText"
-                 class="alert alert-success">
-              <p>{{schoolText}}</p>
-            </div>
-          </div>
-
         </div>
         <button type="submit" class="btn btn-primary btn-md" (click)="signUp()">{{ 'user-SignUp' | translate }}</button>
       </div>
