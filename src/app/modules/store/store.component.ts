@@ -5,8 +5,8 @@ import {IUser} from "../../interfaces/user";
 
 @Component({
   selector: 'store',
-  templateUrl: './store.component.html',
-  styleUrls: ['./store.component.css']
+  templateUrl: './templates/store.component.html',
+  styleUrls: ['./assets/store.component.css']
 })
 export class StoreComponent {
 

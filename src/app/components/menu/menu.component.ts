@@ -6,8 +6,8 @@ declare var $: any;
 
 @Component({
   selector: 'menu-app',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  templateUrl: './templates/menu.component.html',
+  styleUrls: ['./assets/menu.component.css']
 })
 export class MenuComponent implements OnInit {
   @Output() onModuleClicked: EventEmitter<ILink> = new EventEmitter<ILink>();

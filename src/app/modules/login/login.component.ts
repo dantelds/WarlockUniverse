@@ -8,8 +8,8 @@ import {IUser} from '../../interfaces/user'
 
 @Component({
   selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './templates/login.component.html',
+  styleUrls: ['./assets/login.component.css']
 })
 export class LoginComponent {
   error: string = null;

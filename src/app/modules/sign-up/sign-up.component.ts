@@ -8,8 +8,8 @@ import {IInput} from "../../interfaces/input";
 import {ISelect} from "../../interfaces/select";
 @Component({
   selector: 'login',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  templateUrl: './templates/sign-up.component.html',
+  styleUrls: ['./assets/sign-up.component.css']
 })
 export class SignUpComponent {
   user: IUser = this.GeneralService.returnEmptyUser();

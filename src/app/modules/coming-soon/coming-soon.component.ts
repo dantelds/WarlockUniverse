@@ -4,8 +4,8 @@ import {GeneralService} from '../../services/general.service';
 
 @Component({
   selector: 'coming-soon',
-  templateUrl: './coming-soon.component.html',
-  styleUrls:['./coming-soon.component.css']
+  templateUrl: './templates/coming-soon.component.html',
+  styleUrls:['./assets/coming-soon.component.css']
 })
 export class ComingSoonComponent {
 

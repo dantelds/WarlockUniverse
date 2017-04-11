@@ -5,8 +5,8 @@ import {IUser} from "../../interfaces/user";
 
 @Component({
   selector: 'warlock',
-  templateUrl: './warlock.component.html',
-  styleUrls: ['./warlock.component.css']
+  templateUrl: './templates/warlock.component.html',
+  styleUrls: ['./assets/warlock.component.css']
 })
 export class WarlockComponent implements OnInit {
 

@@ -5,8 +5,8 @@ import {IUser} from "../../interfaces/user";
 
 @Component({
   selector: 'school',
-  templateUrl: './school.component.html',
-  styleUrls: ['./school.component.css']
+  templateUrl: './templates/school.component.html',
+  styleUrls: ['./assets/school.component.css']
 })
 export class SchoolComponent {
 
