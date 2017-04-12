@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ISelect} from "../../interfaces/select";
+import {ISelect} from "./interfaces/select.interface";
 
 @Component({
   selector: 'select-component',

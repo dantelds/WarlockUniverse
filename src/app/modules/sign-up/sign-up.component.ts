@@ -4,8 +4,8 @@ import {TranslateService} from '../../services/language.service';
 import {Md5} from 'ts-md5/dist/md5';
 
 import {IUser} from "../../interfaces/user";
-import {IInput} from "../../interfaces/input";
-import {ISelect} from "../../interfaces/select";
+import {IInput} from "../../components/input/interfaces/input.interface";
+import {ISelect} from "../../components/select/interfaces/select.interface";
 @Component({
   selector: 'login',
   templateUrl: './templates/sign-up.component.html',

@@ -1,11 +1,11 @@
 import {Component, Output, EventEmitter, Input, OnInit} from '@angular/core';
-import {ILink} from "../../interfaces/link";
+import {ILink} from "../link/interfaces/link";
 import {TranslateService} from '../../services/language.service';
 declare var $: any;
 
 
 @Component({
-  selector: 'menu-app',
+  selector: 'menu-component',
   templateUrl: './templates/menu.component.html',
   styleUrls: ['./assets/menu.component.css']
 })

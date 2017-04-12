@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GeneralService} from '../../services/general.service';
 import {IUser} from "../../interfaces/user";
+import {IGear} from "../../components/gear/interfaces/gear.interface";
 
 
 @Component({
@@ -11,7 +12,9 @@ import {IUser} from "../../interfaces/user";
 export class WarlockComponent implements OnInit {
 
   warlock: IUser = null;
-
+  gear: IGear = {
+    image:''
+  };
   constructor(private GeneralService: GeneralService) {
     this.warlock = GeneralService.user;
   }
