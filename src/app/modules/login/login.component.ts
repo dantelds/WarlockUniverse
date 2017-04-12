@@ -4,6 +4,7 @@ import {Md5} from 'ts-md5/dist/md5';
 import {TranslateService} from '../../services/language.service';
 import {IInput} from '../../components/input/interfaces/input.interface'
 import {IUser} from '../../interfaces/user'
+import {IImage} from "../../components/image/interfaces/image.interface";
 
 
 @Component({
@@ -13,7 +14,11 @@ import {IUser} from '../../interfaces/user'
 })
 export class LoginComponent {
   error: string = null;
-
+  logo: IImage = {
+    alt:'logo',
+    extraClass:'',
+    src:'/images/logo.png'
+  };
   modelTest: string = 'test';
 
   user: IUser = null;

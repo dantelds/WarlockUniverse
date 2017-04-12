@@ -1,3 +1,6 @@
+import {IImage} from "../../image/interfaces/image.interface";
+
 export interface IGear {
-  image: string;
+  image: IImage;
+  description: string;
 }
