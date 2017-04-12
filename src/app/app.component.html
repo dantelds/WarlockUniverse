@@ -1,6 +1,6 @@
 <div id="wrapper" class="container">
   <section *ngIf="logged">
-        <menu-app (onModuleClicked)='onModuleClicked($event)' [links]="links"></menu-app>
+        <menu-component (onModuleClicked)='onModuleClicked($event)' [links]="links"></menu-component>
   </section>
   <section>
     <router-outlet></router-outlet>

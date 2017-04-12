@@ -2,14 +2,14 @@ import {Component} from '@angular/core';
 import {GeneralService} from '../../services/general.service';
 import {Md5} from 'ts-md5/dist/md5';
 import {TranslateService} from '../../services/language.service';
-import {IInput} from '../../interfaces/input'
+import {IInput} from '../../components/input/interfaces/input.interface'
 import {IUser} from '../../interfaces/user'
 
 
 @Component({
   selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './templates/login.component.html',
+  styleUrls: ['./assets/login.component.css']
 })
 export class LoginComponent {
   error: string = null;

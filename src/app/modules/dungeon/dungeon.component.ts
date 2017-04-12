@@ -5,8 +5,8 @@ import {IUser} from "../../interfaces/user";
 
 @Component({
   selector: 'dungeon',
-  templateUrl: './dungeon.component.html',
-  styleUrls: ['./dungeon.component.css']
+  templateUrl: './templates/dungeon.component.html',
+  styleUrls: ['./assets/dungeon.component.css']
 })
 export class DungeonComponent {
 

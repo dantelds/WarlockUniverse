@@ -4,12 +4,12 @@ import {TranslateService} from '../../services/language.service';
 import {Md5} from 'ts-md5/dist/md5';
 
 import {IUser} from "../../interfaces/user";
-import {IInput} from "../../interfaces/input";
-import {ISelect} from "../../interfaces/select";
+import {IInput} from "../../components/input/interfaces/input.interface";
+import {ISelect} from "../../components/select/interfaces/select.interface";
 @Component({
   selector: 'login',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  templateUrl: './templates/sign-up.component.html',
+  styleUrls: ['./assets/sign-up.component.css']
 })
 export class SignUpComponent {
   user: IUser = this.GeneralService.returnEmptyUser();

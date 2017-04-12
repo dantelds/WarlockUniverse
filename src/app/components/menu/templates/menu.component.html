@@ -11,7 +11,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li *ngFor="let link of links" [ngClass]="{active: link == activeLink}">
-            <a (click)='onSelectItem(link)' [routerLink]="link.href">{{link.text}}</a>
+            <link-component [setup]="link" (onLinkClicked)="onSelectItem(link)"></link-component>
           </li>
         </ul>
       </div>

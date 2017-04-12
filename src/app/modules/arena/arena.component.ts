@@ -5,8 +5,8 @@ import {IUser} from "../../interfaces/user";
 
 @Component({
   selector: 'arena',
-  templateUrl: './arena.component.html',
-  styleUrls: ['./arena.component.css']
+  templateUrl: './templates/arena.component.html',
+  styleUrls: ['./assets/arena.component.css']
 })
 export class ArenaComponent {
 

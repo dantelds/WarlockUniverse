@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ILink} from "./interfaces/link";
+import {ILink} from "./components/link/interfaces/link";
 import {GeneralService} from './services/general.service';
 import {TranslateService} from './services/language.service';
 import {Router} from '@angular/router';
@@ -11,22 +11,28 @@ export class AppComponent {
   logged: boolean = false;
   links: ILink[] = [{
     href: 'warlock',
-    text: this._translate.instant('menu-warlock')
+    text: this._translate.instant('menu-warlock'),
+    extraClass: ''
   }, {
     href: 'school',
-    text: this._translate.instant('menu-school')
+    text: this._translate.instant('menu-school'),
+    extraClass: ''
   }, {
     href: 'dungeon',
-    text: this._translate.instant('menu-dungeons')
+    text: this._translate.instant('menu-dungeons'),
+    extraClass: ''
   }, {
     href: 'arena',
-    text: this._translate.instant('menu-arena')
+    text: this._translate.instant('menu-arena'),
+    extraClass: ''
   }, {
     href: 'store',
-    text: this._translate.instant('menu-store')
+    text: this._translate.instant('menu-store'),
+    extraClass: ''
   }, {
     href: 'coming-soon',
-    text: 'coming-soon'
+    text: 'coming-soon',
+    extraClass: ''
   }];
 
   constructor(private _translate: TranslateService, private GeneralService: GeneralService, private router: Router) {

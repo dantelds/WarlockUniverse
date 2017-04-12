@@ -1,4 +1,4 @@
-import {IOption} from './option'
+import {IOption} from './option.interface'
 export interface ISelect {
   id: string;
   extraClass: string;
