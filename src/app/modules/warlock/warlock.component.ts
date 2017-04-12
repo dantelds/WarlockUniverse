@@ -13,7 +13,12 @@ export class WarlockComponent implements OnInit {
 
   warlock: IUser = null;
   gear: IGear = {
-    image:''
+    image:{
+      alt:'logo',
+      extraClass:'',
+      src: null
+    },
+    description:'lorem ipsum dolor asit met'
   };
   constructor(private GeneralService: GeneralService) {
     this.warlock = GeneralService.user;
