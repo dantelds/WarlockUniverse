@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GeneralService} from '../../services/general.service';
 import {IUser} from "../../interfaces/user";
 import {IGear} from "../../components/gear/interfaces/gear.interface";
+import {IImage} from "../../components/image/interfaces/image.interface";
 
 
 @Component({
@@ -12,6 +13,11 @@ import {IGear} from "../../components/gear/interfaces/gear.interface";
 export class WarlockComponent implements OnInit {
 
   warlock: IUser = null;
+  warlockImage: IImage = {
+    alt:'warlock image',
+    src:null,
+    extraClass:''
+  };
   gear: IGear = {
     image:{
       alt:'logo',
