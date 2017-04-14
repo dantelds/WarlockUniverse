@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IInput} from "./interfaces/input.interface";
+import {InputModel} from "./models/input.model";
 
 
 @Component({
@@ -8,7 +8,7 @@ import {IInput} from "./interfaces/input.interface";
   styleUrls: ['./assets/input.component.css']
 })
 export class InputComponent{
-  @Input() setup: IInput = null;
+  @Input() setup: InputModel = null;
   constructor() {
   }
 }

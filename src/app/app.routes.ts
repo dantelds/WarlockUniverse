@@ -6,6 +6,7 @@ export const routes: Routes = [
   {path: 'arena', loadChildren: 'app/modules/arena/arena.module#ArenaModule'},
   {path: 'dungeon', loadChildren: 'app/modules/dungeon/dungeon.module#DungeonModule'},
   {path: 'login', loadChildren: 'app/modules/login/login.module#LoginModule'},
+  {path: 'logOut', loadChildren: 'app/modules/log-out/log-out.module#LogOutModule'},
   {path: 'school', loadChildren: 'app/modules/school/school.module#SchoolModule'},
   {path: 'sign-up', loadChildren: 'app/modules/sign-up/sign-up.module#SignUpModule'},
   {path: 'store', loadChildren: 'app/modules/store/store.module#StoreModule'},

@@ -44,6 +44,8 @@
     "body-parser": "^1.5.1"
   },
   "scripts": {
+    "api": "concurrently \"node backend/app.js\"",
+    "mocks": "concurrently \"node src/mocks/app.js\"",
     "build": "tsc -p src/",
     "build:watch": "tsc -p src/ -w",
     "build:e2e": "tsc -p e2e/",

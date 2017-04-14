@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {ILink} from "./interfaces/link";
+import {LinkModel} from "./models/link.model";
 
 
 @Component({
@@ -8,13 +8,13 @@ import {ILink} from "./interfaces/link";
   styleUrls: ['./assets/link.component.css']
 })
 export class LinkComponent{
-  @Output() onLinkClicked: EventEmitter<ILink> = new EventEmitter<ILink>();
+  @Output() onLinkClicked: EventEmitter<LinkModel> = new EventEmitter<LinkModel>();
 
-  @Input() setup: ILink = null;
+  @Input() setup: LinkModel = null;
   constructor() {
   }
 
-  onClick(link:ILink){
+  onClick(link:LinkModel){
     this.onLinkClicked.emit(link);
   }
 }

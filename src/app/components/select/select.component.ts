@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ISelect} from "./interfaces/select.interface";
+import {SelectModel} from "./models/select.model";
 
 @Component({
   selector: 'select-component',
@@ -7,7 +7,7 @@ import {ISelect} from "./interfaces/select.interface";
   styleUrls: ['./assets/select.component.css']
 })
 export class SelectComponent {
-  @Input() setup: ISelect = null;
+  @Input() setup: SelectModel = null;
   @Output() onOptionSelected: EventEmitter<string> = new EventEmitter<string>();
   constructor() {
   }

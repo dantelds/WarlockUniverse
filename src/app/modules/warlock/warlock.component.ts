@@ -1,29 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {GeneralService} from '../../services/general.service';
-import {IUser} from "../../interfaces/user";
-import {IGear} from "../../components/gear/interfaces/gear.interface";
+import {GearModel} from "../../components/gear/models/gear.model";
+import {ImageModel} from "../../components/image/models/image.model";
+import {UserModel} from "../../shared/models/user.model";
 
 
 @Component({
-  selector: 'warlock',
+  selector: 'warlock-module',
   templateUrl: './templates/warlock.component.html',
   styleUrls: ['./assets/warlock.component.css']
 })
-export class WarlockComponent implements OnInit {
-
-  warlock: IUser = null;
-  gear: IGear = {
-    image:{
-      alt:'logo',
-      extraClass:'',
-      src: null
-    },
-    description:'lorem ipsum dolor asit met'
-  };
+export class WarlockComponent{
+  warlock: UserModel = null;
+  warlockImage: ImageModel = new ImageModel('warlock image', '', null);
+  gear: GearModel = new GearModel('lorem ipsum dolor asit met', 'object', new ImageModel('', '', null));
   constructor(private GeneralService: GeneralService) {
     this.warlock = GeneralService.user;
   }
 
-  ngOnInit() {
+  onGearClicked(gear:GearModel, area:string){
   }
 }
