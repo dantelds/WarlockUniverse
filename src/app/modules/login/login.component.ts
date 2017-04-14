@@ -2,57 +2,40 @@ import {Component} from '@angular/core';
 import {GeneralService} from '../../services/general.service';
 import {Md5} from 'ts-md5/dist/md5';
 import {TranslateService} from '../../services/language.service';
-import {IInput} from '../../components/input/interfaces/input.interface'
-import {IUser} from '../../interfaces/user'
-import {IImage} from "../../components/image/interfaces/image.interface";
+import {InputModel} from '../../components/input/models/input.model';
+import {ImageModel} from "../../components/image/models/image.model";
+import {UserModel} from "../../shared/models/user.model";
 
 
 @Component({
-  selector: 'login',
+  selector: 'login-component',
   templateUrl: './templates/login.component.html',
   styleUrls: ['./assets/login.component.css']
 })
 export class LoginComponent {
   error: string = null;
-  logo: IImage = {
-    alt:'logo',
-    extraClass:'',
-    src:'/images/logo.png'
-  };
+  logo: ImageModel = new ImageModel('logo', '', '/images/logo.png');
   modelTest: string = 'test';
 
-  user: IUser = null;
+  user: UserModel = this.GeneralService.returnEmptyUser();
+  userInput: InputModel = new InputModel(this._translate.instant('user-username-required'), null, 'lg_username',
+    this._translate.instant('user-username'), this.user.username, 'lg_username', this._translate.instant('user-username'), true, 'text' );
 
-  userInput: IInput = {
-    id: 'lg_username',
-    extraClass: null,
-    error: this._translate.instant('user-username-required'),
-    label: this._translate.instant('user-username'),
-    model: '',
-    name: 'lg_username',
-    placeholder: this._translate.instant('user-username'),
-    required: true,
-    type: 'text'
-  };
+  passwordInput: InputModel = new InputModel(this._translate.instant('user-password-required'), null, 'lg_password',
+    this._translate.instant('user-password'), this.user.password, 'lg_password', this._translate.instant('user-password'), true, 'password' );
 
-  passwordInput: IInput = {
-    id: 'lg_password',
-    extraClass: null,
-    error: this._translate.instant('user-password-required'),
-    label: this._translate.instant('user-password'),
-    model: '',
-    name: 'lg_password',
-    placeholder: this._translate.instant('user-password'),
-    required: true,
-    type: 'password'
-  };
 
   constructor(private GeneralService: GeneralService, private _translate: TranslateService) {
+    if(this.GeneralService.user)
+    {
+      this.GeneralService.loginManagerEmmit(this.GeneralService.user);
+    }
   }
 
-  onLogin(user: any) {
+  onLogin(user: UserModel) {
     this.error = null;
-    this.GeneralService.user = user;
+    this.GeneralService.user =  new UserModel(user.birthDate, user.gender, user.health, user.lastName, user.magic,
+      user.name, user.password, user.username, user.school, user.strength);
     this.GeneralService.loginManagerEmmit(user);
   }
 

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IImage} from "./interfaces/image.interface";
+import {ImageModel} from "./models/image.model";
 
 
 @Component({
@@ -14,7 +14,7 @@ export class ImageComponent implements OnInit{
       this.setup.src = '/app/components/image/assets/no_image.png'
     }
   }
-  @Input() setup: IImage = null;
+  @Input() setup: ImageModel = null;
   constructor() {
   }
 }

@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {IGear} from "./interfaces/gear.interface";
+import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {GearModel} from "./models/gear.model";
 
 
 @Component({
@@ -8,7 +8,11 @@ import {IGear} from "./interfaces/gear.interface";
   styleUrls: ['./assets/gear.component.css']
 })
 export class GearComponent{
-  @Input() setup: IGear = null;
+  @Input() setup: GearModel = null;
+  @Output() onGearClicked: EventEmitter<GearModel> = new EventEmitter<GearModel>();
   constructor() {
+  }
+  onClick(gear:GearModel){
+    this.onGearClicked.emit(gear);
   }
 }

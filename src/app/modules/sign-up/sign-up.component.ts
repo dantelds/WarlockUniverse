@@ -3,130 +3,67 @@ import {GeneralService} from '../../services/general.service';
 import {TranslateService} from '../../services/language.service';
 import {Md5} from 'ts-md5/dist/md5';
 
-import {IUser} from "../../interfaces/user";
-import {IInput} from "../../components/input/interfaces/input.interface";
-import {ISelect} from "../../components/select/interfaces/select.interface";
+import {InputModel} from "../../components/input/models/input.model";
+import {UserModel} from "../../shared/models/user.model";
+import {SelectModel} from "../../components/select/models/select.model";
+import {OptionModel} from "../../components/select/models/option.model";
 @Component({
-  selector: 'login',
+  selector: 'sign-up-module',
   templateUrl: './templates/sign-up.component.html',
   styleUrls: ['./assets/sign-up.component.css']
 })
 export class SignUpComponent {
-  user: IUser = this.GeneralService.returnEmptyUser();
+
   error: string = null;
   schoolText: string = null;
+  user: UserModel = this.GeneralService.returnEmptyUser();
 
-  userInput: IInput = {
-    id: 'su_username',
-    extraClass: null,
-    error: this._translate.instant('user-username-required'),
-    label: this._translate.instant('user-username'),
-    model: '',
-    name: 'su_username',
-    placeholder: this._translate.instant('user-username'),
-    required: true,
-    type: 'text'
-  };
+  userInput: InputModel = new InputModel(this._translate.instant('user-username-required'), null, 'su_username',
+    this._translate.instant('user-username'), '', 'su_username', this._translate.instant('user-username'), true, 'text' );
 
-  passwordInput: IInput = {
-    id: 'su_password',
-    extraClass: null,
-    error: this._translate.instant('user-password-required'),
-    label: this._translate.instant('user-password'),
-    model: '',
-    name: 'su_password',
-    placeholder: this._translate.instant('user-password'),
-    required: true,
-    type: 'password'
-  };
+  passwordInput: InputModel = new InputModel(this._translate.instant('user-password-required'), null, 'su_password',
+    this._translate.instant('user-password'), '', 'su_password', this._translate.instant('user-password'), true, 'password' );
 
-  nameInput: IInput = {
-    id: 'su_name',
-    extraClass: null,
-    error: this._translate.instant('user-name-required'),
-    label: this._translate.instant('user-name'),
-    model: '',
-    name: 'su_name',
-    placeholder: this._translate.instant('user-name'),
-    required: true,
-    type: 'text'
-  };
+  nameInput: InputModel = new InputModel(this._translate.instant('user-name-required'), null, 'su_name',
+    this._translate.instant('user-username'), '', 'su_name', this._translate.instant('user-name'), true, 'text' );
 
-  lastNameInput: IInput = {
-    id: 'su_lastName',
-    extraClass: null,
-    error: this._translate.instant('user-lastName-required'),
-    label: this._translate.instant('user-lastName'),
-    model: '',
-    name: 'su_lastName',
-    placeholder: this._translate.instant('user-lastName'),
-    required: true,
-    type: 'text'
-  };
+  lastNameInput: InputModel = new InputModel(this._translate.instant('user-lastName-required'), null, 'su_lastName',
+    this._translate.instant('user-lastName'), '', 'su_lastName', this._translate.instant('user-lastName'), true, 'text' );
 
-  genderSelect: ISelect = {
-    id:'su_gender',
-    extraClass: '',
-    error: this._translate.instant('user-gender-required'),
-    label: this._translate.instant('user-gender'),
-    model: '',
-    name: 'su_gender',
-    options:[
-      {
-        text:this._translate.instant('user-select-gender'),
-        value:''
-      },{
-        text:this._translate.instant('Male'),
-        value:'Male'
-      },{
-        text:this._translate.instant('Female'),
-        value:'Female'
-      }],
-    required: true
-  };
+  genderOptions: Array<OptionModel> = [
+    new OptionModel(this._translate.instant('user-select-gender'), ''),
+    new OptionModel(this._translate.instant('Male'), 'Male'),
+    new OptionModel(this._translate.instant('Female'), 'Female')
+  ]
 
-  birthDateInput: IInput = {
-    id: 'su_birthDate',
-    extraClass: null,
-    error: this._translate.instant('user-birthDate-required'),
-    label: this._translate.instant('user-birthDate'),
-    model: '',
-    name: 'su_birthDate',
-    placeholder: this._translate.instant('user-birthDate'),
-    required: true,
-    type: 'date'
-  };
+  genderSelect: SelectModel = new SelectModel(this._translate.instant('user-gender-required'), '', 'su_gender',
+    this._translate.instant('user-gender'), '', 'su_gender', this.genderOptions, true);
 
-  schoolSelect: ISelect = {
-    id:'su_school',
-    extraClass: '',
-    error: this._translate.instant('user-school-required'),
-    label: this._translate.instant('user-school'),
-    model: '',
-    name: 'su_school',
-    options:[
-      {
-        text:this._translate.instant('user-select-school'),
-        value:''
-      },{
-        text:this._translate.instant('earth'),
-        value:'earth'
-      },{
-        text:this._translate.instant('fire'),
-        value:'fire'
-      },{
-        text:this._translate.instant('water'),
-        value:'water'
-      },{
-        text:this._translate.instant('wind'),
-        value:'wind'
-      }],
-    required: true
-  };
+
+
+
+  birthDateInput: InputModel = new InputModel(this._translate.instant('user-birthDate-required'), null, 'su_birthDate',
+    this._translate.instant('user-birthDate'), '', 'su_birthDate', this._translate.instant('user-birthDate'), true, 'date' );
+
+
+  schoolOptions: Array<OptionModel> = [
+    new OptionModel(this._translate.instant('user-select-school'), ''),
+    new OptionModel(this._translate.instant('earth'), 'earth'),
+    new OptionModel(this._translate.instant('fire'), 'fire'),
+    new OptionModel(this._translate.instant('water'), 'water'),
+    new OptionModel(this._translate.instant('wind'), 'wind')
+  ]
+
+  schoolSelect: SelectModel = new SelectModel(this._translate.instant('user-school-required'), '', 'su_school',
+    this._translate.instant('user-school'), '', 'su_school', this.schoolOptions, true);
 
 
 
   constructor(private GeneralService: GeneralService, private _translate: TranslateService) {
+    if(this.GeneralService.user)
+    {
+      this.GeneralService.loginManagerEmmit(this.GeneralService.user);
+    }
   }
 
   setInitialAttributes(strength: number, magic: number, health: number) {
@@ -161,9 +98,10 @@ export class SignUpComponent {
   }
 
 
-  onSignUp(user: IUser) {
+  onSignUp(user: UserModel) {
     this.error = null;
-    this.GeneralService.user = user;
+    this.GeneralService.user =  new UserModel(user.birthDate, user.gender, user.health, user.lastName, user.magic,
+      user.name, user.password, user.username, user.school, user.strength);
     this.GeneralService.loginManagerEmmit(user);
   }
 
@@ -172,19 +110,9 @@ export class SignUpComponent {
   }
 
   signUp() {
-    var body: IUser = {
-      username: this.userInput.model,
-      password: Md5.hashStr(this.passwordInput.model).toString(),
-      name: this.nameInput.model,
-      lastName: this.lastNameInput.model,
-      birthDate: this.birthDateInput.model,
-      school: this.schoolSelect.model,
-      gender: this.genderSelect.model,
-      health: this.user.health,
-      magic: this.user.magic,
-      strength: this.user.strength
-    };
-    this.GeneralService.apiCall('post', 'sign-up', body)
+    this.user = new UserModel(this.birthDateInput.model, this.genderSelect.model, this.user.health, this.lastNameInput.model, this.user.magic,
+      this.nameInput.model, Md5.hashStr(this.passwordInput.model).toString(), this.userInput.model, this.schoolSelect.model, this.user.strength);
+    this.GeneralService.apiCall('post', 'signup', this.user)
       .subscribe((Response:any) => this.onSignUp(Response), (Error:any) => this.onError(Error));
   }
 

@@ -1,8 +1,11 @@
 export const LANG_ES_NAME = 'es';
 
 export const LANG_ES_TRANS = {
+  "copyright": "todos los derechos reservados",
   "login-header": "Entra en Warlock Universe",
   "login-sub-header": "combiertete en el guerrero mas fuerte",
+
+  "log-out-message": "Gracias por jugar en warlock universe",
 
   "user-username-required": "Se requiere un nombre de usuario",
   "user-password-required": "Se requiere una contraseña",
@@ -38,6 +41,7 @@ export const LANG_ES_TRANS = {
   "menu-dungeons": "Mazmorra",
   "menu-arena": "Arena",
   "menu-store": "Tienda",
+  "menu-log-out": "Cerrar sesión",
 
 
   "earth": "Tierra",
